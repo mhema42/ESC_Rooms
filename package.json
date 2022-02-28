@@ -2,13 +2,18 @@
   "name": "02-esc-website",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch --no-source-map src/main.scss main.css"
+    "watch": "sass --watch --no-source-map src/main.scss main.css",
+    "start": "node ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.43.4"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
   }
 }
