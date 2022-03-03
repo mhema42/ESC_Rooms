@@ -2,9 +2,11 @@ import express from "express";
 import fs from "fs/promises";
 
 const app = express();
+
+app.use(express.static("www"));
     
 app.get("/", async (request, response) => {
-    const filebuf = await fs.readFile("./index.html");
+    const filebuf = await fs.readFile("./src/index.html");
     response.type("html");
     response.send(filebuf);
 });
@@ -13,7 +15,7 @@ app.get("/*", async (request, response) => {
     try {
         const fileName = request.path;
         console.log(fileName);
-        const filebuf = await fs.readFile(`./${fileName}`);
+        const filebuf = await fs.readFile(`./src/${fileName}`);
         const type = fileName.split(".")[1];
         response.type(type); 
         response.send(filebuf);
@@ -22,4 +24,4 @@ app.get("/*", async (request, response) => {
     }
 });
 
-app.listen(5080);
+app.listen(3000);

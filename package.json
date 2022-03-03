@@ -6,11 +6,14 @@
   "main": "index.js",
   "scripts": {
     "watch": "sass --watch --no-source-map src/main.scss main.css",
-    "start": "node ."
+    "start": "node .",
+    "cypress:open": "cypress open"
+
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^9.5.1",
     "sass": "^1.43.4"
   },
   "dependencies": {
